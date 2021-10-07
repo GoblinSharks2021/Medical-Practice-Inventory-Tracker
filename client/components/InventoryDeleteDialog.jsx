@@ -1,5 +1,11 @@
-import React, { useState } from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText } from '@mui/material';
+import React, { useState } from "react";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+} from "@mui/material";
 
 function InventoryDeleteDialog(props) {
   const [open, setOpen] = useState(false);
@@ -13,14 +19,16 @@ function InventoryDeleteDialog(props) {
   };
 
   return (
-    <div style={{display: "inline"}}>
-      <Button variant="outlined" size="small" color="secondary" onClick={handleClickOpen}>
+    <div style={{ display: "inline" }}>
+      <Button
+        variant="outlined"
+        size="small"
+        color="secondary"
+        onClick={handleClickOpen}
+      >
         Delete Item
       </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-      >
+      <Dialog open={open} onClose={handleClose}>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             Delete the selected rows?
@@ -28,7 +36,13 @@ function InventoryDeleteDialog(props) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>No</Button>
-          <Button onClick={(event) => {handleClose(event); props.deleteData(props.table)}} autoFocus>
+          <Button
+            onClick={(event) => {
+              handleClose(event);
+              props.deleteData(props.table);
+            }}
+            autoFocus
+          >
             Yes
           </Button>
         </DialogActions>

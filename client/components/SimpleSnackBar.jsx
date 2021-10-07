@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
-import { Snackbar, IconButton } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close'
+import React, { useState } from "react";
+import { Snackbar, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 function SimpleSnackbar(props) {
-
   const { alertText, open, handleClose } = props;
 
   const action = (
