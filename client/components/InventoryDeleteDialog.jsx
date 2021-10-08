@@ -4,7 +4,7 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogContentText,
+  DialogContentText
 } from '@mui/material';
 
 function InventoryDeleteDialog(props) {
@@ -21,16 +21,16 @@ function InventoryDeleteDialog(props) {
   return (
     <div style={{ display: 'inline' }}>
       <Button
-        variant='outlined'
-        size='small'
-        color='secondary'
+        variant="outlined"
+        size="small"
+        color="secondary"
         onClick={handleClickOpen}
       >
         Delete Item
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogContent>
-          <DialogContentText id='alert-dialog-description'>
+          <DialogContentText id="alert-dialog-description">
             Delete the selected rows?
           </DialogContentText>
         </DialogContent>

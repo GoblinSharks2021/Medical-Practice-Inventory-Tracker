@@ -9,7 +9,7 @@ import D3_App from './react-d3/src/D3_App.js';
 const appRouting = (
   <Router>
     <Switch>
-      <Route exact path='/' component={App} />
+      <Route exact path="/" component={App} />
     </Switch>
   </Router>
 );

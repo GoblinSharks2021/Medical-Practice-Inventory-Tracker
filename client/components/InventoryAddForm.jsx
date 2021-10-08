@@ -42,7 +42,7 @@ function InventoryAddForm(props) {
     if (productName === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -54,7 +54,7 @@ function InventoryAddForm(props) {
     } else if (quantity === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -66,7 +66,7 @@ function InventoryAddForm(props) {
     } else if (expyDate === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -82,7 +82,7 @@ function InventoryAddForm(props) {
       const body = {
         product_name: productName,
         quantity: quantity,
-        expiration_date: expyDate,
+        expiration_date: expyDate
       };
 
       console.log(body);
@@ -90,9 +90,9 @@ function InventoryAddForm(props) {
       fetch('/api/inventory', {
         method: 'POST',
         headers: {
-          'Content-Type': 'Application/JSON',
+          'Content-Type': 'Application/JSON'
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(body)
       })
         .then((resp) => resp.json())
         .then((data) => {
@@ -113,7 +113,7 @@ function InventoryAddForm(props) {
 
   return (
     <div>
-      <Typography variant='h4'>Add Inventory</Typography>
+      <Typography variant="h4">Add Inventory</Typography>
       {renderWarning}
       <form
         onSubmit={(event) => {
@@ -127,15 +127,15 @@ function InventoryAddForm(props) {
           onChange={(event, newProductName) => {
             setProductName(newProductName);
           }}
-          name='productName'
+          name="productName"
           renderInput={(params) => (
-            <TextField {...params} label='Product Name' variant='standard' />
+            <TextField {...params} label="Product Name" variant="standard" />
           )}
         />
         <br />
         <TextField
-          label='Quantity'
-          variant='standard'
+          label="Quantity"
+          variant="standard"
           value={quantity}
           onChange={(event) => {
             setQuantity(event.target.value);
@@ -144,14 +144,14 @@ function InventoryAddForm(props) {
         <br />
         <input
           style={{ marginTop: '20px', marginBottom: '20px' }}
-          type='date'
+          type="date"
           value={expyDate}
           onChange={(event) => {
             setExpyDate(event.target.value);
           }}
         />
         <br />
-        <Button variant='contained' color='primary' type='submit'>
+        <Button variant="contained" color="primary" type="submit">
           Submit
         </Button>
       </form>

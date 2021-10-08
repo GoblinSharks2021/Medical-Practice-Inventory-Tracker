@@ -66,8 +66,8 @@ function TableContainer(props) {
       method: 'DELETE',
       body: JSON.stringify(toBeDeleted),
       headers: {
-        'Content-Type': 'Application/JSON',
-      },
+        'Content-Type': 'Application/JSON'
+      }
     })
       .then((resp) => resp.json())
       .then((data) => {
@@ -144,7 +144,7 @@ function TableContainer(props) {
 
   return (
     <div>
-      <Typography variant='h5'>{name}</Typography>
+      <Typography variant="h5">{name}</Typography>
       {addButton}
       {deleteButton}
       <div style={{ height: 400, width: '100%' }}>

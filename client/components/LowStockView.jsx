@@ -38,7 +38,7 @@ function LowStockView() {
 
   return (
     <div>
-      <Typography variant='h5'>Running Low</Typography>
+      <Typography variant="h5">Running Low</Typography>
       <div style={{ height: 300, width: '100%' }}>
         <DataGrid rows={rows} columns={columnDefinitions.lowStock} />
       </div>

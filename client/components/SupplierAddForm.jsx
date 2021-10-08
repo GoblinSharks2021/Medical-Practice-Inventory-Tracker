@@ -23,7 +23,7 @@ function SupplierAddForm(props) {
     if (duplicate) {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -36,7 +36,7 @@ function SupplierAddForm(props) {
     if (supplierName === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -49,7 +49,7 @@ function SupplierAddForm(props) {
     if (keyContact === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -62,7 +62,7 @@ function SupplierAddForm(props) {
     if (supplierPhoneNumber === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -75,7 +75,7 @@ function SupplierAddForm(props) {
     if (supplierAddress === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -92,15 +92,15 @@ function SupplierAddForm(props) {
         supplier_name: supplierName,
         key_contact: keyContact,
         supplier_phone_number: supplierPhoneNumber,
-        supplier_address: supplierAddress,
+        supplier_address: supplierAddress
       };
 
       fetch('/api/suppliers', {
         method: 'POST',
         headers: {
-          'Content-Type': 'Application/JSON',
+          'Content-Type': 'Application/JSON'
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(body)
       })
         .then((resp) => resp.json())
         .then((data) => {
@@ -121,7 +121,7 @@ function SupplierAddForm(props) {
 
   return (
     <div>
-      <Typography variant='h4'>Add Supplier</Typography>
+      <Typography variant="h4">Add Supplier</Typography>
       {renderWarning}
       <form
         onSubmit={(event) => {
@@ -129,8 +129,8 @@ function SupplierAddForm(props) {
         }}
       >
         <TextField
-          label='Supplier Name'
-          variant='standard'
+          label="Supplier Name"
+          variant="standard"
           value={supplierName}
           onChange={(event) => {
             setSupplierName(event.target.value);
@@ -138,8 +138,8 @@ function SupplierAddForm(props) {
         />
         <br />
         <TextField
-          label='Key Contact'
-          variant='standard'
+          label="Key Contact"
+          variant="standard"
           value={keyContact}
           onChange={(event) => {
             setKeyContact(event.target.value);
@@ -147,8 +147,8 @@ function SupplierAddForm(props) {
         />
         <br />
         <TextField
-          label='Phone Number'
-          variant='standard'
+          label="Phone Number"
+          variant="standard"
           value={supplierPhoneNumber}
           onChange={(event) => {
             setSupplierPhoneNumber(event.target.value);
@@ -156,15 +156,15 @@ function SupplierAddForm(props) {
         />
         <br />
         <TextField
-          label='Address'
-          variant='standard'
+          label="Address"
+          variant="standard"
           value={supplierAddress}
           onChange={(event) => {
             setSupplierAddress(event.target.value);
           }}
         />
         <br />
-        <Button variant='contained' color='primary' type='submit'>
+        <Button variant="contained" color="primary" type="submit">
           Submit
         </Button>
       </form>

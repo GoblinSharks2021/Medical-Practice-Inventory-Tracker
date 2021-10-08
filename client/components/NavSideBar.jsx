@@ -5,7 +5,7 @@ import {
   Toolbar,
   List,
   ListItem,
-  ListItemText,
+  ListItemText
 } from '@mui/material';
 
 function NavSideBar(props) {
@@ -13,11 +13,14 @@ function NavSideBar(props) {
 
   return (
     <Drawer
-      variant='permanent'
+      variant="permanent"
       sx={{
         width: drawerWidth,
         flexShrink: 0,
-        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+        [`& .MuiDrawer-paper`]: {
+          width: drawerWidth,
+          boxSizing: 'border-box'
+        }
       }}
     >
       <Toolbar />
@@ -29,7 +32,7 @@ function NavSideBar(props) {
             'Current Inventory',
             'Procedures',
             'Catalog',
-            'Suppliers',
+            'Suppliers'
           ].map((text) => (
             <ListItem
               button

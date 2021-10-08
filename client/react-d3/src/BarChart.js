@@ -43,7 +43,7 @@ class BarChart extends Component {
   render() {
     return (
       <div
-        className='App'
+        className="App"
         id={'#' + this.props.id}
         data={this.props.data}
         width={this.props.width}

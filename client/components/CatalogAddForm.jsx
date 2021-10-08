@@ -48,7 +48,7 @@ function CatalogAddForm(props) {
     if (duplicate) {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -61,7 +61,7 @@ function CatalogAddForm(props) {
     if (productName === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -74,7 +74,7 @@ function CatalogAddForm(props) {
     if (supplierName === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -87,7 +87,7 @@ function CatalogAddForm(props) {
     if (unitPrice === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -100,7 +100,7 @@ function CatalogAddForm(props) {
     if (qtyPerUnit === '') {
       setWarning(
         <Alert
-          severity='warning'
+          severity="warning"
           onClose={() => {
             setWarningOn(false);
           }}
@@ -118,15 +118,15 @@ function CatalogAddForm(props) {
         product_desc: productDesc,
         supplier_name: supplierName,
         unit_price: unitPrice,
-        qty_per_unit: qtyPerUnit,
+        qty_per_unit: qtyPerUnit
       };
 
       fetch('/api/catalog', {
         method: 'POST',
         headers: {
-          'Content-Type': 'Application/JSON',
+          'Content-Type': 'Application/JSON'
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(body)
       })
         .then((resp) => resp.json())
         .then((data) => {
@@ -147,7 +147,7 @@ function CatalogAddForm(props) {
 
   return (
     <div>
-      <Typography variant='h4'>Add Products</Typography>
+      <Typography variant="h4">Add Products</Typography>
       {renderWarning}
       <form
         onSubmit={(event) => {
@@ -155,8 +155,8 @@ function CatalogAddForm(props) {
         }}
       >
         <TextField
-          label='Product Name'
-          variant='standard'
+          label="Product Name"
+          variant="standard"
           value={productName}
           onChange={(event) => {
             setProductName(event.target.value);
@@ -164,8 +164,8 @@ function CatalogAddForm(props) {
         />
         <br />
         <TextField
-          label='Product Description'
-          variant='standard'
+          label="Product Description"
+          variant="standard"
           value={productDesc}
           onChange={(event) => {
             setProductDesc(event.target.value);
@@ -179,15 +179,15 @@ function CatalogAddForm(props) {
           onChange={(_event, newSupplierName) => {
             setSupplierName(newSupplierName);
           }}
-          name='supplierName'
+          name="supplierName"
           renderInput={(params) => (
-            <TextField {...params} label='Supplier Name' variant='standard' />
+            <TextField {...params} label="Supplier Name" variant="standard" />
           )}
         />
         <br />
         <TextField
-          label='Unit Price'
-          variant='standard'
+          label="Unit Price"
+          variant="standard"
           value={unitPrice}
           onChange={(event) => {
             setUnitPrice(event.target.value);
@@ -195,15 +195,15 @@ function CatalogAddForm(props) {
         />
         <br />
         <TextField
-          label='Quantity per Unit'
-          variant='standard'
+          label="Quantity per Unit"
+          variant="standard"
           value={qtyPerUnit}
           onChange={(event) => {
             setQtyPerUnit(event.target.value);
           }}
         />
         <br />
-        <Button variant='contained' color='primary' type='submit'>
+        <Button variant="contained" color="primary" type="submit">
           Submit
         </Button>
       </form>

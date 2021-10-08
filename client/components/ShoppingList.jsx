@@ -7,7 +7,7 @@ import {
   MenuItem,
   Select,
   TextField,
-  Button,
+  Button
 } from '@mui/material';
 import columnDefinitions from './columns.js';
 
@@ -79,7 +79,7 @@ function HomeContainer(props) {
           needed: needed,
           cost: cost,
           supplier: element.supplier_name,
-          id: index,
+          id: index
         };
         rows.push(newObj);
         setRows(rows);
@@ -115,7 +115,7 @@ function HomeContainer(props) {
 
   return (
     <div>
-      <Typography variant='h5' sx={{ mt: 2 }}>
+      <Typography variant="h5" sx={{ mt: 2 }}>
         Select a procedure
       </Typography>
       <Box sx={{ minWidth: 120 }}>
@@ -128,7 +128,7 @@ function HomeContainer(props) {
           <InputLabel>Procedure</InputLabel>
           <Select
             value={procedure}
-            label='Procedure'
+            label="Procedure"
             onChange={handleChange}
             sx={{ mb: 1, mt: 1 }}
           >
@@ -136,8 +136,8 @@ function HomeContainer(props) {
           </Select>
           <br />
           <TextField
-            label='Number of Procedures'
-            variant='standard'
+            label="Number of Procedures"
+            variant="standard"
             value={numProcedures}
             sx={{ mb: 1, mt: 1 }}
             onChange={(event) => {
@@ -146,9 +146,9 @@ function HomeContainer(props) {
           />
           <br />
           <Button
-            variant='contained'
-            color='primary'
-            type='submit'
+            variant="contained"
+            color="primary"
+            type="submit"
             sx={{ mb: 1, mt: 1 }}
           >
             Submit

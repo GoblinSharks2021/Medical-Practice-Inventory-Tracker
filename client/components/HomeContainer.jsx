@@ -5,14 +5,14 @@ import ExpirationView from './ExpirationView.jsx';
 
 function HomeContainer() {
   return (
-    <div className='homeContainer'>
-      <div className='expyView'>
+    <div className="homeContainer">
+      <div className="expyView">
         <ExpirationView />
       </div>
-      <div className='lowStockView'>
+      <div className="lowStockView">
         <LowStockView />
       </div>
-      <div className='chartView'>
+      <div className="chartView">
         <ChartView />
       </div>
     </div>

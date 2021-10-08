@@ -8,13 +8,13 @@ class D3_App extends Component {
       data: [30, 300, 51, 25, 5, 3], //this.props.data
       width: 300,
       height: 500,
-      id: 'home',
+      id: 'home'
     };
   }
 
   render() {
     return (
-      <div className='App_D3'>
+      <div className="App_D3">
         <BarChart
           id={this.state.id}
           data={this.state.data}

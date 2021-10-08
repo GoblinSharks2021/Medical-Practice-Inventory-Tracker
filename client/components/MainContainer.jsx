@@ -57,7 +57,7 @@ function MainContainer() {
       <CssBaseline />
       <Banner />
       <NavSideBar buttonClick={buttonClick} />
-      <Box component='main' sx={{ flexGrow: 1, p: 2 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 2 }}>
         <Toolbar />
         {mainContent}
       </Box>

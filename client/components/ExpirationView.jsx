@@ -36,7 +36,7 @@ function ExpirationView() {
 
   return (
     <div>
-      <Typography variant='h5'>Expiring Soon</Typography>
+      <Typography variant="h5">Expiring Soon</Typography>
       <div style={{ height: 300, width: '100%' }}>
         <DataGrid rows={rows} columns={columnDefinitions.expiration} />
       </div>

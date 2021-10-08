@@ -9,7 +9,7 @@ class AddModal extends Component {
     super(props);
 
     this.state = {
-      showModal: false,
+      showModal: false
     };
 
     this.showModal = this.showModal.bind(this);
@@ -58,26 +58,26 @@ class AddModal extends Component {
     }
 
     return (
-      <div className='modalButton'>
+      <div className="modalButton">
         <Button
-          variant='outlined'
-          color='secondary'
-          size='small'
+          variant="outlined"
+          color="secondary"
+          size="small"
           onClick={this.showModal}
         >
           {buttonName}
         </Button>
         {this.state.showModal ? (
-          <div className='modal'>
-            <div className='modalContent'>
-              <div className='modalBody'>
+          <div className="modal">
+            <div className="modalContent">
+              <div className="modalBody">
                 {addForm}
-                <div className='exitButton'>
+                <div className="exitButton">
                   <Button
                     onClick={this.showModal}
-                    variant='outlined'
-                    color='secondary'
-                    size='small'
+                    variant="outlined"
+                    color="secondary"
+                    size="small"
                   >
                     Exit
                   </Button>
