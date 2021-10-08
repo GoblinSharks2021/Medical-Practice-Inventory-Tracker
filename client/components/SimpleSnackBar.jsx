@@ -1,20 +1,19 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Snackbar, IconButton } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close'
+import CloseIcon from '@mui/icons-material/Close';
 
 function SimpleSnackbar(props) {
-
   const { alertText, open, handleClose } = props;
 
   const action = (
     <React.Fragment>
       <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
+        size='small'
+        aria-label='close'
+        color='inherit'
         onClick={handleClose}
       >
-        <CloseIcon fontSize="small" />
+        <CloseIcon fontSize='small' />
       </IconButton>
     </React.Fragment>
   );
