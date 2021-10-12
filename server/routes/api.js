@@ -19,9 +19,6 @@ router.get('/home',
     (req, res) => res.status(200).json(res.locals.procedureDetails)
 );
 
-router.get('/home', homeController.viewInventoryPercentages, (req, res) => res.status(200).json(res.locals.stockPercent) 
-);
-
 // routes for INVENTORY TABLE
 router.get("/inventory", 
     inventoryController.getAllInventory, 
@@ -67,11 +64,6 @@ router.delete('/procedures',
 router.get("/catalog", 
     catalogController.getAllProducts, 
     (req, res) => res.status(200).json(res.locals.products)
-);
-
-router.get("/lowstock", 
-    catalogController.lowStock, 
-    (req, res) => res.status(200).json(res.locals.lowStock)
 );
 
 router.post('/catalog', 

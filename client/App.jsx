@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import MainContainer from './components/MainContainer.jsx';
 
 const App = () => {
-  return (
-    <div className="app">
-      <MainContainer />
-    </div>
-  );
+   return (
+   <div>
+      <MainContainer/>
+   </div>
+   )
 };
 
 export default App;
