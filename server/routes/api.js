@@ -5,7 +5,9 @@ const router = express.Router();
 const homeController = require('../controllers/homeController');
 
 router.use('/inventory', require('./inventory'));
-const proceduresController = require('../controllers/proceduresController');
+
+router.use('/procedures', require('./procedures'));
+// const proceduresController = require('../controllers/proceduresController');
 const catalogController = require('../controllers/catalogController');
 const supplierController = require('../controllers/supplierController');
 
@@ -23,18 +25,18 @@ router.get('/home', homeController.viewInventoryPercentages, (req, res) =>
   res.status(200).json(res.locals.stockPercent)
 );
 
-// routes for PROCEDURES TABLE
-router.get('/procedures', proceduresController.getAllProcedures, (req, res) =>
-  res.status(200).json(res.locals.procedures)
-);
+// // routes for PROCEDURES TABLE
+// router.get('/procedures', proceduresController.getAllProcedures, (req, res) =>
+//   res.status(200).json(res.locals.procedures)
+// );
 
-router.post('/procedures', proceduresController.addNewProcedure, (req, res) =>
-  res.status(200).json(res.locals.newProcedure)
-);
+// router.post('/procedures', proceduresController.addNewProcedure, (req, res) =>
+//   res.status(200).json(res.locals.newProcedure)
+// );
 
-router.delete('/procedures', proceduresController.deleteProcedure, (req, res) =>
-  res.status(200).json(res.locals.deleteProcedure)
-);
+// router.delete('/procedures', proceduresController.deleteProcedure, (req, res) =>
+//   res.status(200).json(res.locals.deleteProcedure)
+// );
 
 // routes for CATALOG TABLE
 router.get('/catalog', catalogController.getAllProducts, (req, res) =>
