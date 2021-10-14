@@ -3,6 +3,7 @@ const express = require('express');
 const router = express();
 
 const inventoryController = require('../controllers/inventoryController');
+const AppError = require('../../utils/AppError');
 
 // routes for INVENTORY TABLE
 router.get('/', inventoryController.getAllInventory, (req, res) =>

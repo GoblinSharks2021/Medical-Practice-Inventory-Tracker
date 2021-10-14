@@ -3,6 +3,7 @@ const express = require('express');
 const router = express();
 
 const proceduresController = require('../controllers/proceduresController');
+const AppError = require('../../utils/AppError');
 
 // routes for PROCEDURES TABLE
 router.get('/', proceduresController.getAllProcedures, (req, res) =>

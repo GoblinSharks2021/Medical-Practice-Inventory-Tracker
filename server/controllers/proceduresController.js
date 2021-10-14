@@ -5,7 +5,9 @@ const AppError = require('../../utils/AppError');
 
 const proceduresController = {};
 
-// add middleware
+//@route        GET api/procedures/
+//@desc         Get all procedures
+//@access     Private
 proceduresController.getAllProcedures = async (req, res, next) => {
   const allProceduresQuery = `SELECT procedures.procedure_name, procedures.procedure_desc, catalog.product_name, junction.qty_per_procedure FROM procedures 
         INNER JOIN junction ON procedures.procedure_id = junction.procedure_id
@@ -20,6 +22,9 @@ proceduresController.getAllProcedures = async (req, res, next) => {
   next();
 };
 
+//@route        POST api/procedures
+//@desc         Post a new procedure
+//@access     Private
 proceduresController.addNewProcedure = async (req, res, next) => {
   try {
     const { procedure_id, procedure_name, procedure_desc } = req.body;
@@ -55,16 +60,21 @@ proceduresController.updateProcedure = async (req, res, next) => {
   }
 };
 
-// refactor this...
+//@route       DELETE api/procedures
+//@desc         Delete a single procedure
+//@access     Private
+
+//DELETE ON CASCADE from CATALOG
+//changing id to req.params but keep in mind, the ids are serialized in db
 proceduresController.deleteProcedure = async (req, res, next) => {
+  const { id } = req.params;
   try {
-    console.log('req body for deleteProcedure -->', req.body);
-    const id = req.body[0];
     const deletedProcedure = await pool.query(
-      `DELETE FROM procedure 
+      `DELETE FROM procedures 
       WHERE procedure_id = $1`,
       [id]
     );
+    // console.log(deletedProcedure, 'deleteProcedure'.bgMagenta);
     res.locals.deletedProcedure = deletedProcedure;
   } catch (err) {
     next(err);
