@@ -59,9 +59,6 @@ supplierController.addNewSupplier = async (req, res, next) => {
   next();
 };
 
-//@route        PUT api/suppliers/
-//@desc         Update a supplier
-//@access     Private
 supplierController.updateSupplier = async (req, res, next) => {
   try {
     // console.log(req.body)

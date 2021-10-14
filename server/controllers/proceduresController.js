@@ -1,7 +1,4 @@
-const colors = require('colors');
-
 const pool = require('../models/inventoryModel');
-const AppError = require('../../utils/AppError');
 
 const proceduresController = {};
 
@@ -40,26 +37,6 @@ proceduresController.addNewProcedure = async (req, res, next) => {
   next();
 };
 
-//@route       PUT api/procedures
-//@desc         Update a single procedure's desc
-//@access     Private
-proceduresController.updateProcedure = async (req, res, next) => {
-  const { procedure_name, procedure_desc } = req.body;
-  //cannot update the product name because it is not a part of the pool
-  // console.log(req.body, 'req.body'.rainbow);
-  try {
-    const updatedProcedure = await pool.query(
-      'UPDATE procedures SET procedure_desc= $2 WHERE procedure_name=$1',
-      [procedure_name, procedure_desc]
-    );
-    res.locals.updatedProcedure = updatedProcedure;
-    return res.json(res.locals);
-  } catch (e) {
-    console.error(e.message);
-    return next(e);
-  }
-};
-
 //@route       DELETE api/procedures
 //@desc         Delete a single procedure
 //@access     Private
@@ -69,8 +46,10 @@ proceduresController.updateProcedure = async (req, res, next) => {
 proceduresController.deleteProcedure = async (req, res, next) => {
   const { id } = req.params;
   try {
+    console.log('req body for deleteProcedure -->', req.body);
+    const id = req.body[0];
     const deletedProcedure = await pool.query(
-      `DELETE FROM procedures 
+      `DELETE FROM procedure 
       WHERE procedure_id = $1`,
       [id]
     );

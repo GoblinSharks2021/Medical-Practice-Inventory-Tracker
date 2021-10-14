@@ -1,5 +1,4 @@
 const pool = require('../models/inventoryModel');
-const AppError = require('../../utils/AppError');
 
 const inventoryController = {};
 
@@ -25,8 +24,8 @@ inventoryController.getInventoryById = async (req, res, next) => {
     );
     res.json(inventoryById.row);
   } catch (err) {
-    // console.error(err.message);
-    return next(new AppError(err, 404));
+    console.error(err.message);
+    next(err);
   }
   next();
 };
@@ -42,7 +41,7 @@ inventoryController.addNewInventory = async (req, res, next) => {
     res.locals.newInventory = newInventory;
   } catch (err) {
     console.log(err);
-    return next(new AppError(err, 404));
+    next(err);
   }
   next();
 };
