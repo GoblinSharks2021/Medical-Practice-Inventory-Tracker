@@ -12,6 +12,7 @@ router.use('/procedures', require('./procedures'));
 
 //CATALOG DOES NOT WORK WITH MVC PATTERN RIGHT NOW... MUST UPDATE
 const catalogController = require('../controllers/catalogController');
+
 router.use('/suppliers', require('./suppliers'));
 
 function testFunction(req, res, next) {
